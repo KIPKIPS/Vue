@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>数据绑定</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<div id="root">
+    单向数据绑定:<input type="text" v-bind:value="name"></br>
+    双向数据绑定:<input type="text" v-model:value="name"></br>
+    <!--简写-->
+    单向数据绑定:<input type="text" :value="name"></br>
+    双向数据绑定:<input type="text" v-model="name"></br>
+    <!--    
+        v-model只能应用于表单类元素,即输入类元素
+    -->
+</div>
+<script>
+    Vue.config.productionTip = false //阻止Vue启动的提示
+    new Vue({
+        el: '#root',
+        data: {
+            name:"KIPKIPS",
+        },
+    });
+</script>
+</body>
+</html>
