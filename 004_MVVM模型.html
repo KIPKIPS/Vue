@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="js/vue.js"></script>
+    <title>004_MVVM模型</title>
+</head>
+<body>
+    <!--
+        MVVM模型
+        M:模型Model:data中的数据
+        V:视图:View:模板代码
+        VM:视图模型:ViewModel:Vue实例
+        
+        data中的属性都出现在vm上
+        vm上的所有属性以及Vue原型上所有属性,在Vue模板中都可以使用
+    -->
+    <div id="root">
+        <h1>学校名称:{{name}}</h1>
+        <h1>学校地址:{{address}}</h1>
+        <h1>test:{{$emit}}</h1>
+    </div>
+</body>
+<script>
+    Vue.config.productionTip = false //阻止Vue启动的提示
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            name: "KIPKIPS",
+            address:"上海",
+        },
+    });
+    console.log(vm)
+</script>
+</html>
