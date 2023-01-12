@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>005_Object.defineProperty方法</title>
+<!--    <script type="text/javascript" src="js/vue.js"></script>-->
+</head>
+<body>
+<div id="root">
+</div>
+<script>
+    // Vue.config.productionTip = false //阻止Vue启动的提示
+    // new Vue({
+    //     el: '#root',
+    //     data: {
+    //         name: "KIPKIPS",
+    //     },
+    // });
+    let person = {
+        name:"KIPKIPS",
+        sex:"male",
+    }
+    let age = 20
+    //这种方法指定的属性不被枚举(不参加遍历)
+    Object.defineProperty(person,"age",{
+        // value:18,
+        // enumerable:true,//指定该对象是否可以被枚举,默认值 false
+        // writable:true,//指定属性是否可以被修改,默认值 false
+        // configurable:true,//控制属性是否可以被删除,默认值 false
+        get(){
+            return age
+        },
+        set(value){
+            
+        }
+    })
+    // delete(person.age)
+    // delete person.age
+    console.log(Object.keys(person))
+    for (let key in person){
+        console.log("@",person[key])
+    }
+    age = 10
+    console.log(person)
+</script>
+</body>
+</html>
